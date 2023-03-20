@@ -1,0 +1,43 @@
+.filter {
+    width: 30%;
+    min-height: 15rem;
+    max-height: 30rem;
+    margin: 1em auto;
+    list-style: none;
+    padding: .4rem .2rem;
+    background-color: rgb(234, 176, 236);
+    border: none;
+    border-radius: 2rem;
+}
+
+.filter-body {
+    width: 70%;
+    height: 70%;
+    margin: 5rem auto;
+    padding: 0;
+}
+
+.filter-text {
+    font-size: 200%;
+    text-align: center;
+    color:rgb(87, 25, 102);
+}
+
+.filter-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-items>button {
+    width: max-content;
+    height:3rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: rgba(52, 2, 56, 0.836);
+    font-style: oblique;
+    color: #fff;
+    margin: .3rem;
+    padding: auto;
+}

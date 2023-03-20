@@ -1,0 +1,57 @@
+.create-to-do {
+    width: 70%;
+    height: 11rem;
+    margin: 1em auto;
+    list-style: none;
+    padding: .4rem .2rem;
+    background-color: rgb(234, 176, 236);
+    border: none;
+    border-radius: 2rem;
+}
+
+.form-body {
+    width: 100%;
+    height: 70%;
+    margin: 1rem auto;
+    padding: 0;
+}
+
+label.form-item {
+    font-size: 200%;
+    font-weight: 700;
+    text-align: center;
+    color:rgb(87, 25, 102);
+    margin: 1rem 42%;
+}
+
+.form-action {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 5rem;
+}
+
+.form-control {
+    width: 70%;
+    border: none;
+    border-radius: 2rem;
+    text-align: left;
+    padding: 1rem;
+}
+
+.btn-submit {
+    width: max-content;
+    height:3rem;
+    border: 1px solid #fff;
+    border-radius: 2rem;
+    background-color: rgb(234, 176, 236);
+    color: #000;
+    margin: .3rem;
+    padding: auto;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: rgba(52, 2, 56, 0.836);
+    color: #fff;
+}

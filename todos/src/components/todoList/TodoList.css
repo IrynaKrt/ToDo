@@ -1,0 +1,16 @@
+ul {
+    width: 60%;
+    height: max-content;
+    margin: 1em auto;
+    list-style: none;
+    padding: .4rem .2rem;
+    background-color: rgb(234, 176, 236);
+    border: none;
+    border-radius: 2rem;
+    color:rgb(84, 3, 104);
+}
+
+.no-to-do {
+    font-size: 200%;
+    text-align: center;
+}

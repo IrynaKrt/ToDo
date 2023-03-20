@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": "fe37e789-0797-4648-abe9-aa9182d7ed25",
+      "description": "fffffffffffffffff",
+      "tag": ""
+    }
+  ],
+  "filters": [
+    {
+      "id": "shop",
+      "name": "shop",
+      "label": "#shop",
+      "className": "filter-item"
+    },
+    {
+      "id": "homework",
+      "name": "homework",
+      "label": "#homework",
+      "className": "filter-item"
+    },
+    {
+      "id": "dog",
+      "name": "dog",
+      "label": "#dog",
+      "className": "filter-item"
+    }
+  ]
+}

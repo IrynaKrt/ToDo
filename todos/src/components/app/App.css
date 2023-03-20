@@ -1,0 +1,5 @@
+main .to-do-tags {
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+}

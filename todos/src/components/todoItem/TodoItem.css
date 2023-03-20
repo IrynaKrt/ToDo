@@ -1,0 +1,61 @@
+.todo-list {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    background-color: rgb(214, 133, 187);
+    margin: 2rem auto;
+    border: none;
+    border-radius: 3rem;
+
+}
+
+.item-list label {
+    display: flex;
+    align-self: center;
+    padding: 5px 10px;
+    margin: .3rem 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.item-list input {
+    display: none;
+}
+
+.item-list label::before {
+    content: '✎';
+    padding: 1.8rem;
+    font-size: 150%;
+    transform: scale(-1, 1);
+}
+
+input:checked ~ label {
+    text-decoration: line-through;
+    color:rgb(77, 74, 77);
+}
+
+
+.item-body {
+	position: relative;
+	padding: .5rem 0;
+	cursor: pointer;
+    font-size: 150%;
+}
+
+.item-list span.close {
+    position: absolute;
+    margin: 1.5em 0 0 47%;
+    height: 6rem;
+    width: 3rem;
+    cursor: pointer;
+}
+
+.btn-close{
+    width: 100%;
+    height: 50%;
+    background-color:  rgb(234, 176, 236);
+    border: 1px solid #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
