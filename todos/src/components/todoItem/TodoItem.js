@@ -22,10 +22,11 @@ const TodoItem = (props) => {
 
     return (
         <li className={`todo-list ${tagClassName}`}>
-            <input type="checkbox" id={id}/>
+            <input type="checkbox" id={id} className='check'/>
             <label htmlFor={id}>
                 <div className="item-body">
                     <p className="item-text">{props.description}</p>
+                    <textarea required name="text" id="text"  placeholder="Type the notice" className="text-notice"/>
                 </div>
                 <span onClick={props.onDelete} className="close">
                     <button type="button" className="btn-close" aria-label="Close"><img src={close} alt="close" width="25" height="25"/></button>
@@ -35,4 +36,4 @@ const TodoItem = (props) => {
     )
 }
 
-export default TodoItem
+export default TodoItem;

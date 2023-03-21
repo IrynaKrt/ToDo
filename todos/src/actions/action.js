@@ -1,4 +1,4 @@
-import { filtersFetched, filtersFetching, filtersFetchingError } from "../components/heroesFilters/filtersSlice";
+import { filtersFetched, filtersFetching, filtersFetchingError } from "../components/todoFilter/filtersSlice";
 
 export const fetchFilters = (request) => (dispatch) => {
     dispatch(filtersFetching());

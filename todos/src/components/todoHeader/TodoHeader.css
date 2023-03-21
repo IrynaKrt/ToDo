@@ -17,3 +17,22 @@ header {
     color:rgb(87, 25, 102);
     text-align: center;
 }
+
+@media screen and (max-width: 1440px) and (min-width: 800px) {
+    .container h1 {
+        font-size: 200%;
+    }
+  }
+
+  @media screen and (max-width: 800px) and (min-width: 500px) {
+    .container h1 {
+        font-size: 120%;
+    }
+  }
+
+  @media screen and (max-width: 500px) and (min-width: 200px) {
+    .container h1 {
+        font-size: 150%;
+    }
+  }
+

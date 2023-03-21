@@ -1,7 +1,7 @@
 .create-to-do {
-    width: 70%;
+    width: 120%;
     height: 11rem;
-    margin: 1em auto;
+    margin: 1rem 0;
     list-style: none;
     padding: .4rem .2rem;
     background-color: rgb(234, 176, 236);
@@ -12,7 +12,7 @@
 .form-body {
     width: 100%;
     height: 70%;
-    margin: 1rem auto;
+    margin: auto;
     padding: 0;
 }
 
@@ -21,18 +21,19 @@ label.form-item {
     font-weight: 700;
     text-align: center;
     color:rgb(87, 25, 102);
-    margin: 1rem 42%;
+    margin: 0 1rem;
+    padding: 2rem 0 1rem;
 }
 
 .form-action {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 2rem 5rem;
+    margin: 2rem;
 }
 
 .form-control {
-    width: 70%;
+    width: 60%;
     border: none;
     border-radius: 2rem;
     text-align: left;
@@ -54,4 +55,88 @@ label.form-item {
 .btn-submit:hover {
     background-color: rgba(52, 2, 56, 0.836);
     color: #fff;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 800px) {
+    .create-to-do {
+        width: 90%;
+        height: fit-content;
+        margin: 1rem;
+    }
+
+    .form-body {
+        width: 90%;
+        height: 90%;
+    }
+
+    label.form-item {
+        font-size: 170%;
+    }
+
+    .form-action {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 2rem;
+    }
+
+    .form-control {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 500px)  {
+    .create-to-do {
+        width: 85%;
+        height: fit-content;
+        margin: 1rem;
+    }
+
+    .form-body {
+        width: 90%;
+        height: fit-content;
+    }
+
+    label.form-item {
+        font-size: 150%;
+    }
+
+    .form-action {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) and (min-width: 200px)  {
+    .create-to-do {
+        width: 100%;
+        height: fit-content;
+        margin: 2rem 0;
+    }
+
+    .form-body {
+        width: 90%;
+        height: fit-content;
+    }
+
+    label.form-item {
+        font-size: 130%;
+    }
+
+    .form-action {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: .7rem;
+    }
+
+    .form-control {
+        width: 100%;
+    }
 }

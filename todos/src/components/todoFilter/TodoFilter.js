@@ -1,16 +1,35 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import store from '../../store/store';
+import { CSSTransition, TransitionGroup} from 'react-transition-group';
 
-import {activeFilterChanged, fetchFilters, selectAll} from './filtersSlice';
+import { fetchFilters, activeFilterChanged } from './filtersSlice';
+import { useGetTagQuery, useDeleteTagMutation } from '../../api/apiSlice';
 import Spinner from '../../spinner/Spinner';
 
+import FilterItem from '../filterItem/FilterItem';
 import './TodoFilter.css';
 
 const TodoFilter = () => {
+    const {
+        data: filters = [],
+        isLoading,
+        isError,
+    } = useGetTagQuery();
+
+    const [deleteTag] = useDeleteTagMutation();
+
     const {filtersLoadingStatus, activeFilter} = useSelector(state => state.filters);
-    const filters = selectAll(store.getState());
-    //обязательно с аргументом глобального стора!
+    const filteredTags = useMemo(() => {
+        const filteredTags = filters.slice();
+
+        if(activeFilter === 'all') {
+            return filters;
+        } else {
+            return filteredTags.filter(item => item.element === activeFilter);
+        }
+                // eslint-disable-next-line
+    }, [filters, activeFilter]);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,39 +37,51 @@ const TodoFilter = () => {
         // eslint-disable-next-line
     }, []);
 
-    if (filtersLoadingStatus === "loading") {
+    const onDelete = useCallback((id) => {
+        // Удаление персонажа по его id
+        deleteTag(id);
+        // eslint-disable-next-line
+    }, []);
+
+    if (isLoading) {
         return <Spinner/>;
-    } else if (filtersLoadingStatus === "error") {
+    } else if (isError) {
         return <h5 className="text-center mt-5">Failed for Loading</h5>
     }
 
-    const renderFilters = (arr) => {
+    const renderTagFilter = (arr) => {
         if (arr.length === 0) {
-            return <h5 className="text-center mt-5">Tags not found</h5>
+            return (
+                <CSSTransition
+                    timeout={0}
+                    classNames="to-do">
+                    <h5 className="no-to-do">No tags!</h5>
+                </CSSTransition>
+            )
         }
 
-        // Данные в json-файле я расширил классами и текстом
-        return arr.map(({name, className, label}) => {
-
-            return <button
-                        key={name}
-                        id={name}
-                        className={`${className}` + name === activeFilter ? 'active' : null}
-                        onClick={() => dispatch(activeFilterChanged(name))}
-                        >{label}</button>
+        return arr.map(({id, ...props}) => {
+            return (
+                <CSSTransition
+                    key={id}
+                    timeout={500}
+                    classNames="filter-items">
+                    <FilterItem {...props} onDelete={() => onDelete(id)}/>
+                </CSSTransition>
+            )
         })
     }
 
-    const elements = renderFilters(filters);
+    const elements = renderTagFilter(filteredTags);
 
     return (
         <div className="filter">
             <div className="filter-body">
                 <h3 className="filter-text">Your tags</h3>
-                <div className="filter-items">
-                    {elements}
+                    <TransitionGroup component="ul">
+                        {elements}
+                    </TransitionGroup>
                 </div>
-            </div>
         </div>
     )
 }

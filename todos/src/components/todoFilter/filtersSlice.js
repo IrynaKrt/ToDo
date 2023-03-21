@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, createEntityAdapter } from "@reduxjs/toolkit";
+import { createSelector, createSlice, createAsyncThunk, createEntityAdapter } from "@reduxjs/toolkit";
 import {useHttp} from '../../hooks/http.hook';
 
 const filtersAdapter = createEntityAdapter();
@@ -9,7 +9,7 @@ const initialState = filtersAdapter.getInitialState({
 })
 
 export const fetchFilters = createAsyncThunk(
-    'heroes/fetchFilters',
+    'todos/fetchFilters',
     () => {
         const {request} = useHttp();
         return request("http://localhost:3001/filters")
@@ -20,6 +20,12 @@ const filtersSlice = createSlice({
     name: 'filters',
     initialState,
     reducers: {
+        filterCreated: (state, action) => {
+            filtersAdapter.addOne(state, action.payload);
+        },
+        filterDeleted: (state, action) => {
+            filtersAdapter.removeOne(state, action.payload);
+        },
         activeFilterChanged: (state, action) => {
             state.activeFilter = action.payload
         }
@@ -42,9 +48,22 @@ const filtersSlice = createSlice({
 
 const {actions, reducer} = filtersSlice;
 
+export default reducer;
+
 export const {selectAll} = filtersAdapter.getSelectors(state => state.filters);
 
-export default reducer;
+export const filteredTagSelector = createSelector(
+    (state) => state.filters.activeFilter,
+    selectAll,
+    (filter, todos) => {
+        if(filter === 'all') {
+            return todos;
+        } else {
+            return todos.filter(item => item.element === filter);
+        }
+    }
+)
+
 export const {
     filtersFetching,
     filtersFetched,

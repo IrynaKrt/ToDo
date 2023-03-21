@@ -6,7 +6,6 @@
     margin: 2rem auto;
     border: none;
     border-radius: 3rem;
-
 }
 
 .item-list label {
@@ -18,8 +17,18 @@
     cursor: pointer;
 }
 
-.item-list input {
+.item-list input.check {
     display: none;
+}
+
+.item-list .item-input {
+    opacity: 0;
+    height: 0;
+    width: 60%;
+    border: none;
+    border-radius: 2rem;
+    text-align: left;
+    padding: 1rem;
 }
 
 .item-list label::before {
@@ -29,11 +38,10 @@
     transform: scale(-1, 1);
 }
 
-input:checked ~ label {
+input.check:checked ~ label {
+    color:rgba(233, 221, 221, 0.822);
     text-decoration: line-through;
-    color:rgb(77, 74, 77);
 }
-
 
 .item-body {
 	position: relative;
@@ -42,9 +50,22 @@ input:checked ~ label {
     font-size: 150%;
 }
 
-.item-list span.close {
+p.item-text {
+    text-align: left;
+    margin: 1.5rem 0;
+}
+
+textarea.text-notice {
+    width: 270%;
+    border: none;
+    border-radius: 2rem;
+    text-align: left;
+    padding: .8rem;
+}
+
+.todo-list.item-list .close {
     position: absolute;
-    margin: 1.5em 0 0 47%;
+    margin: 1.5em 0 0 35%;
     height: 6rem;
     width: 3rem;
     cursor: pointer;
@@ -59,3 +80,128 @@ input:checked ~ label {
     cursor: pointer;
 }
 
+@media screen and (max-width: 1440px) and (min-width: 800px) {
+    .todo-list {
+        width: 90%;
+    }
+
+    .item-list .item-input {
+        width: 30%;
+    }
+
+    .item-list label::before {
+        font-size: 120%;
+    }
+
+    .item-body {
+        font-size: 120%;
+    }
+
+    textarea.text-notice {
+        width: 80%;
+        padding: 1rem .7rem;
+    }
+
+    .todo-list.item-list .close {
+        margin: 1.5em 0 0 15rem;
+    }
+
+    .btn-close{
+        width: 55%;
+        height: 20%;
+    }
+    .btn-close>img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 500px) {
+    .todo-list {
+        width: 85%;
+        height: fit-content;
+        margin: 1rem 1rem;
+        border-radius: 1.5rem;
+    }
+
+    .item-list .item-input {
+        width: 80%;
+    }
+
+    .item-list label::before {
+        font-size: 100%;
+        padding: 1.5rem .5rem;
+    }
+
+    p.item-text {
+        text-align: left;
+        margin: 1rem 0;
+    }
+
+    .item-body {
+        font-size: 100%;
+    }
+
+    textarea.text-notice {
+        width: 80%;
+        padding: .5rem;
+    }
+
+    .todo-list.item-list .close {
+        margin: .3em 0 0 7rem;
+    }
+
+    .btn-close{
+        width: 55%;
+        height: 20%;
+    }
+    .btn-close>img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) and (min-width: 200px) {
+    .todo-list {
+        width: 90%;
+        height: fit-content;
+        margin: 1rem auto;
+        border-radius: 1.5rem;
+    }
+
+    .item-list .item-input {
+        width: 100%;
+    }
+
+    .item-list label::before {
+        font-size: 100%;
+        padding: 1.5rem .5rem;
+    }
+
+    p.item-text {
+        text-align: left;
+        margin: 1rem 0;
+    }
+
+    .item-body {
+        font-size: 100%;
+    }
+
+    textarea.text-notice {
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .todo-list.item-list .close {
+        margin: 1.5em 0 0 11rem;
+    }
+
+    .btn-close{
+        width: 55%;
+        height: 20%;
+    }
+    .btn-close>img {
+        width: 100%;
+        height: 100%;
+    }
+}

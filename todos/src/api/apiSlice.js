@@ -9,13 +9,25 @@ export const apiSlice = createApi({
             query: () => '/todos',
             providesTags: ['Todos']
         }),
+        getTag: builder.query({
+            query: () => '/filters',
+            providesTags: ['Filters']
+        }),
         createTodo: builder.mutation({
-            query: hero => ({
+            query: todo => ({
                 url: '/todos',
                 method: 'POST',
-                body: hero
+                body: todo
             }),
             invalidatesTags: ['Todos'] //подвязка под запрос
+        }),
+        createTag: builder.mutation({
+            query: tag => ({
+                url: '/filters',
+                method: 'POST',
+                body: tag
+            }),
+            invalidatesTags: ['Filters']
         }),
         deleteTodo: builder.mutation({
             query: id => ({
@@ -23,8 +35,15 @@ export const apiSlice = createApi({
                 method: 'DELETE'
             }),
             invalidatesTags: ['Todos']
+        }),
+        deleteTag: builder.mutation({
+            query: id => ({
+                url: `/filters/${id}`,
+                method: 'DELETE'
+            }),
+            invalidatesTags: ['Filters']
         })
     })
 });
 
-export const {useGetTodosQuery, useCreateTodoMutation, useDeleteTodoMutation} = apiSlice;
+export const {useGetTodosQuery, useGetTagQuery, useCreateTodoMutation, useCreateTagMutation, useDeleteTodoMutation, useDeleteTagMutation} = apiSlice;

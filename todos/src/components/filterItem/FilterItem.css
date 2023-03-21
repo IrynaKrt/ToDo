@@ -1,0 +1,59 @@
+.filter-list {
+    display: flex;
+    min-width: max-content;
+    height: fit-content;
+    border: none;
+    border-radius: 1.5rem;
+    background-color:rgb(105, 4, 105);
+    color: #fff;
+    margin: .3rem;
+    padding: .2rem;
+}
+
+.tag-body {
+    width: 80%;
+    padding: auto;
+    margin: .1rem;
+}
+
+button.tag-text {
+    font-size: 90%;
+    font-style: oblique;
+    background-color:rgb(105, 4, 105);
+    color: #fff;
+    border: none;
+    border-radius: .5em;
+    padding: .3rem;
+    margin: 0;
+    cursor: pointer;
+}
+
+span.delete {
+    padding: auto 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 800px) {
+    .tag-body {
+        width: 80%;
+        padding: auto;
+        margin: .1rem;
+    }
+
+    button.tag-text {
+        font-size: 90%;
+        font-style: oblique;
+        background-color:rgb(105, 4, 105);
+        color: #fff;
+        border: none;
+        border-radius: .5em;
+        padding: .3rem;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    span.delete {
+        padding: auto 5px;
+        cursor: pointer;
+    }
+}

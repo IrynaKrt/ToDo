@@ -1,7 +1,7 @@
 ul {
     width: 60%;
     height: max-content;
-    margin: 1em auto;
+    margin: 1em 4em;
     list-style: none;
     padding: .4rem .2rem;
     background-color: rgb(234, 176, 236);
@@ -14,3 +14,48 @@ ul {
     font-size: 200%;
     text-align: center;
 }
+
+@media screen and (max-width: 1440px) and (min-width: 800px) {
+    ul {
+        width: 50%;
+        height: fit-content;
+        margin: 1em 2em;
+        list-style: none;
+        padding: .4rem .2rem;
+        background-color: rgb(234, 176, 236);
+        border: none;
+        border-radius: 2rem;
+        color:rgb(84, 3, 104);
+    }
+
+    .no-to-do {
+        font-size: 150%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 500px) {
+    ul {
+        width: 60%;
+        height: fit-content;
+        margin: 1em;
+    }
+
+    .no-to-do {
+        font-size: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) and (min-width: 200px) {
+    ul {
+        width: 100%;
+        height: fit-content;
+        margin: 0;
+    }
+
+    .no-to-do {
+        font-size: 80%;
+        text-align: center;
+    }
+  }

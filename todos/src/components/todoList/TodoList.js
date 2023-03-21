@@ -6,8 +6,8 @@ import { useGetTodosQuery, useDeleteTodoMutation} from '../../api/apiSlice';
 
 import TodoItem from '../todoItem/TodoItem';
 
-import './TodoList.css'
 import Spinner from '../../spinner/Spinner';
+import './TodoList.css';
 
 const TodoList = () => {
     const {
@@ -57,7 +57,7 @@ const TodoList = () => {
             return (
                 <CSSTransition
                     key={id}
-                    timeout={500}
+                    timeout={300}
                     classNames="to-do">
                     <TodoItem {...props} onDelete={() => onDelete(id)}/>
                 </CSSTransition>

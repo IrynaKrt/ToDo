@@ -1,8 +1,18 @@
+.filter-body>ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 80%;
+    max-height: 70%;
+}
+
 .filter {
-    width: 30%;
-    min-height: 15rem;
+    width: 100%;
+    min-height: 10rem;
     max-height: 30rem;
-    margin: 1em auto;
+    margin: 1em;
     list-style: none;
     padding: .4rem .2rem;
     background-color: rgb(234, 176, 236);
@@ -11,9 +21,9 @@
 }
 
 .filter-body {
-    width: 70%;
+    width: 100%;
     height: 70%;
-    margin: 5rem auto;
+    margin: 1rem auto;
     padding: 0;
 }
 
@@ -23,21 +33,68 @@
     color:rgb(87, 25, 102);
 }
 
-.filter-items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+h5.no-to-do {
+    text-align: center;
+    margin: 1em auto;
 }
 
-.filter-items>button {
-    width: max-content;
-    height:3rem;
-    border: none;
-    border-radius: 1rem;
-    background-color: rgba(52, 2, 56, 0.836);
-    font-style: oblique;
-    color: #fff;
-    margin: .3rem;
-    padding: auto;
-}
+@media screen and (max-width: 1440px) and (min-width: 800px) {
+    .filter-body>ul {
+        max-width: 80%;
+        max-height: 40%;
+    }
+
+    .filter {
+        width: 90%;
+    }
+
+    .filter-body {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .filter-text {
+        font-size: 150%;
+    }
+  }
+
+  @media screen and (max-width: 800px) and (min-width: 500px) {
+    .filter-body>ul {
+        max-width: 80%;
+        max-height: fit-content;
+    }
+
+    .filter {
+        width: 90%;
+        margin: .2em;
+    }
+
+    .filter-body {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .filter-text {
+        font-size: 130%;
+    }
+  }
+
+  @media screen and (max-width: 500px) and (min-width: 200px) {
+    .filter-body>ul {
+        max-width: 100%;
+        max-height: fit-content;
+    }
+
+    .filter {
+        width: 100%;
+    }
+
+    .filter-body {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .filter-text {
+        font-size: 120%;
+    }
+  }
