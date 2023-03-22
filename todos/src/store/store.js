@@ -15,7 +15,7 @@ const stringMiddleware = () => (next) => (action) => {
 const store = configureStore({
     reducer: {filters, [apiSlice.reducerPath]: apiSlice.reducer},
     middleware: getDefaultMiddleware => getDefaultMiddleware().concat(stringMiddleware, apiSlice.middleware),
-    devTools: process.env.NODE_ENV !== 'production' //когда просто разрабатываем
+    devTools: process.env.NODE_ENV !== 'production'
 })
 
 export default store;

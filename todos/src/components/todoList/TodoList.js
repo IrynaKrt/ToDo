@@ -27,11 +27,10 @@ const TodoList = () => {
         } else {
             return filteredTodos.filter(item => item.element === activeFilter);
         }
-                // eslint-disable-next-line
+        // eslint-disable-next-line
     }, [todos, activeFilter])
 
     const onDelete = useCallback((id) => {
-        // Удаление персонажа по его id
         deleteTodo(id);
         // eslint-disable-next-line
     }, []);
@@ -52,6 +51,7 @@ const TodoList = () => {
                 </CSSTransition>
             )
         }
+
 
         return arr.map(({id, ...props}) => {
             return (

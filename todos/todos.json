@@ -1,37 +1,38 @@
 {
   "todos": [
     {
-      "id": "d47abeec-90a2-4b22-9089-a00ba16d0241",
-      "description": "pay the ticket\n",
-      "tag": "shop"
+      "id": "8b4c280c-7218-483a-91d3-2e5bc56a2261",
+      "description": "#pay the tickets",
+      "tag": "pay"
     },
     {
-      "id": "ee8a18cb-9dc9-405b-84ed-83663b512025",
-      "description": "ddddd",
+      "id": "b783565d-4b5a-410f-a293-35295cf33e2a",
+      "description": "play with #dog outside",
       "tag": "dog"
     },
     {
-      "id": "749ca024-6549-4955-aaf0-ff3a59632198",
-      "description": "#fdfd ddfsdfadsfsd"
+      "id": "8c770304-22ab-42e8-bbd4-0c7bdf4ea1d8",
+      "description": "#buy flowers for mom",
+      "tag": "buy"
     }
   ],
   "filters": [
     {
-      "id": "shop",
-      "name": "shop",
-      "label": "#shop",
+      "id": "pay",
+      "name": "pay",
+      "label": "#pay",
+      "className": "filter-item"
+    },
+    {
+      "id": "buy",
+      "name": "buy",
+      "label": "#buy",
       "className": "filter-item"
     },
     {
       "id": "dog",
       "name": "dog",
       "label": "#dog",
-      "className": "filter-item"
-    },
-    {
-      "id": "fdf",
-      "name": "fdf",
-      "label": "#fdf",
       "className": "filter-item"
     }
   ]

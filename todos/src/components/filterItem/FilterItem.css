@@ -10,13 +10,22 @@
     padding: .2rem;
 }
 
+.filter-list:hover ~ .filter-list + button{
+    background-color:rgb(184, 181, 184);
+}
+
+.filter-list.hover-item {
+    background-color:rgb(184, 181, 184);
+    color: rgb(105, 4, 105);
+}
+
 .tag-body {
     width: 80%;
     padding: auto;
     margin: .1rem;
 }
 
-button.tag-text {
+button.tag-btn {
     font-size: 90%;
     font-style: oblique;
     background-color:rgb(105, 4, 105);
@@ -26,6 +35,11 @@ button.tag-text {
     padding: .3rem;
     margin: 0;
     cursor: pointer;
+}
+
+button.tag-btn.hover-item {
+    background-color:rgb(184, 181, 184);
+    color: rgb(105, 4, 105);
 }
 
 span.delete {
@@ -40,7 +54,7 @@ span.delete {
         margin: .1rem;
     }
 
-    button.tag-text {
+    button.tag-btn {
         font-size: 90%;
         font-style: oblique;
         background-color:rgb(105, 4, 105);

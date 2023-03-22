@@ -5,7 +5,6 @@ const filtersAdapter = createEntityAdapter();
 
 const initialState = filtersAdapter.getInitialState({
     filtersLoadingStatus: 'idle',
-    activeFilter: 'all'
 })
 
 export const fetchFilters = createAsyncThunk(
@@ -25,9 +24,6 @@ const filtersSlice = createSlice({
         },
         filterDeleted: (state, action) => {
             filtersAdapter.removeOne(state, action.payload);
-        },
-        activeFilterChanged: (state, action) => {
-            state.activeFilter = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -50,11 +46,8 @@ const {actions, reducer} = filtersSlice;
 
 export default reducer;
 
-export const {selectAll} = filtersAdapter.getSelectors(state => state.filters);
 
 export const filteredTagSelector = createSelector(
-    (state) => state.filters.activeFilter,
-    selectAll,
     (filter, todos) => {
         if(filter === 'all') {
             return todos;
@@ -68,5 +61,4 @@ export const {
     filtersFetching,
     filtersFetched,
     filtersFetchingError,
-    activeFilterChanged
 } = actions;

@@ -2,7 +2,7 @@ import { useEffect, useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition, TransitionGroup} from 'react-transition-group';
 
-import { fetchFilters, activeFilterChanged } from './filtersSlice';
+import { fetchFilters } from './filtersSlice';
 import { useGetTagQuery, useDeleteTagMutation } from '../../api/apiSlice';
 import Spinner from '../../spinner/Spinner';
 
@@ -18,7 +18,7 @@ const TodoFilter = () => {
 
     const [deleteTag] = useDeleteTagMutation();
 
-    const {filtersLoadingStatus, activeFilter} = useSelector(state => state.filters);
+    const { activeFilter} = useSelector(state => state.filters);
     const filteredTags = useMemo(() => {
         const filteredTags = filters.slice();
 
@@ -38,10 +38,18 @@ const TodoFilter = () => {
     }, []);
 
     const onDelete = useCallback((id) => {
-        // Удаление персонажа по его id
         deleteTag(id);
         // eslint-disable-next-line
     }, []);
+
+    const onClick = useCallback((id) => {
+        const elem = document.querySelectorAll(`.${id}`);
+        elem.forEach(i => {
+            i.querySelector('.tag-btn');
+            i.classList.toggle("hover-item");
+        })
+        // eslint-disable-next-line
+    }, [filters]);
 
     if (isLoading) {
         return <Spinner/>;
@@ -65,7 +73,8 @@ const TodoFilter = () => {
                 <CSSTransition
                     key={id}
                     timeout={500}
-                    classNames="filter-items">
+                    classNames="filter-items"
+                    onClick={() => onClick(props.name)}>
                     <FilterItem {...props} onDelete={() => onDelete(id)}/>
                 </CSSTransition>
             )
