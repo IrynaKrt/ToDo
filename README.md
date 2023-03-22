@@ -1,2 +1,2 @@
 # ToDo
-https://irynakrt.github.io/ToDo/build
+Deploy: https://todos-example.netlify.app/(without functionality)
