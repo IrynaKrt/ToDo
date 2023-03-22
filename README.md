@@ -1,3 +1,3 @@
 # ToDo
 
-https://irynakrt.github.io/Todo/build
+Deploy: https://todos-example.netlify.app/
